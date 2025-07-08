@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #121212;
+  --color-text-primary: #E0E0E0;
+  --color-text-secondary: #B0B0B0;
+  --color-dark-grey: #444444;
+  --color-btn-blue: #1E88E5;
+
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Global styles */
+:root {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-inter);
+}
