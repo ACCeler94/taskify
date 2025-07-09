@@ -16,3 +16,19 @@
   color: var(--color-text-primary);
   font-family: var(--font-inter);
 }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+
+main {
+  padding: 0 2.5%;
+  flex: 1;
+}
