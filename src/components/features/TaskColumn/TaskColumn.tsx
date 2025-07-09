@@ -1,6 +1,18 @@
-const TaskColumn = ({ title, dotColor }: { title: string; dotColor: string }) => {
+import type { Task, TaskStatus } from '../../../types/types';
+import TaskCard from '../Task/TaskCard/TaskCard';
+
+const TaskColumn = ({
+  title,
+  dotColor,
+  tasks,
+}: {
+  title: string;
+  dotColor: string;
+  tasks: Task[];
+  status: TaskStatus;
+}) => {
   return (
-    <div className='task-column bg-neutral-900 mx-4 rounded-xl p-5'>
+    <section className='task-column bg-neutral-900 mx-4 rounded-xl p-5'>
       <h2 className='column-title flex gap-4 items-center text-lg font-semibold'>
         <svg
           className='status-dot'
@@ -22,7 +34,15 @@ const TaskColumn = ({ title, dotColor }: { title: string; dotColor: string }) =>
         </svg>
         {title}
       </h2>
-    </div>
+
+      <ul className='task-list space-y-2'>
+        {tasks.map((task) => (
+          <li key={task.id}>
+            <TaskCard {...task} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 
