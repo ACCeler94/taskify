@@ -1,6 +1,6 @@
 import { data } from '../../../API/data';
 import type { Column, Task } from '../../../types/types';
-import TaskColumn from '../../features/TaskColumn/TaskColumn';
+import TasksColumn from '../../features/Tasks/TasksColumn/TasksColumn';
 
 const Dashboard = () => {
   // [TODO - Put data in a redux initial state]
@@ -17,7 +17,7 @@ const Dashboard = () => {
       <h1 className='font-bold text-4xl my-5'>Dashboard</h1>
       <div className='grid grid-cols-3 flex-1 gap-4'>
         {columns.map(({ title, status, dotColor }) => (
-          <TaskColumn
+          <TasksColumn
             key={status}
             title={title}
             dotColor={dotColor}
