@@ -1,12 +1,12 @@
 import { data } from '../../../API/data';
-import type { Task } from '../../../types/types';
+import type { Column, Task } from '../../../types/types';
 import TaskColumn from '../../features/TaskColumn/TaskColumn';
 
 const Dashboard = () => {
   // [TODO - Put data in a redux initial state]
   const tasks: Task[] = data;
 
-  const columns = [
+  const columns: Column[] = [
     { title: 'TO DO', status: 'todo', dotColor: '#1E88E5' },
     { title: 'IN PROGRESS', status: 'inProgress', dotColor: '#F5D04C' },
     { title: 'DONE', status: 'done', dotColor: '#24C57A' },
@@ -21,6 +21,7 @@ const Dashboard = () => {
             key={status}
             title={title}
             dotColor={dotColor}
+            status={status}
             tasks={tasks.filter((task) => task.status === status)}
           />
         ))}
