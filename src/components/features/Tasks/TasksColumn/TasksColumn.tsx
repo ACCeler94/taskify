@@ -1,7 +1,7 @@
-import type { Task, TaskStatus } from '../../../types/types';
-import TaskCard from '../Task/TaskCard/TaskCard';
+import type { Task, TaskStatus } from '../../../../types/types';
+import TaskCard from '../TaskCard/TaskCard';
 
-const TaskColumn = ({
+const TasksColumn = ({
   title,
   dotColor,
   tasks,
@@ -46,4 +46,4 @@ const TaskColumn = ({
   );
 };
 
-export default TaskColumn;
+export default TasksColumn;
