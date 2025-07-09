@@ -5,6 +5,7 @@ export interface Task {
   title: string;
   status: TaskStatus;
   desc: string;
+  createdAt: string; // ISO string
 }
 
 export interface Column {
