@@ -13,3 +13,11 @@ export interface Column {
   status: TaskStatus;
   dotColor: string;
 }
+
+// Only id is required to allow partial updates
+export interface EditTaskPayload {
+  id: string;
+  title?: string;
+  desc?: string;
+  status?: TaskStatus;
+}
