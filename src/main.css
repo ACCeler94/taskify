@@ -2,10 +2,10 @@
 
 @theme {
   --color-bg: #121212;
-  --color-text-primary: #E0E0E0;
-  --color-text-secondary: #B0B0B0;
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
   --color-dark-grey: #444444;
-  --color-btn-blue: #1E88E5;
+  --color-btn-blue: #1e88e5;
 
   --font-inter: "Inter", sans-serif;
 }
@@ -17,7 +17,9 @@
   font-family: var(--font-inter);
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
@@ -26,7 +28,6 @@ html, body, #root {
   display: flex;
   flex-direction: column;
 }
-
 
 main {
   padding: 0 2.5%;
