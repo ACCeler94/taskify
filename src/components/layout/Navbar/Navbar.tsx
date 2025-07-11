@@ -8,7 +8,7 @@ const Navbar = () => {
           Taskify
         </Link>
         <Link
-          to="/add"
+          to="/tasks/add"
           className="rounded-4xl bg-(--color-btn-blue) px-8 py-2 text-lg font-semibold"
         >
           New Task +
