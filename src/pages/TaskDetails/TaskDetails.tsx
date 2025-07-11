@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
+import BackButton from "../../components/common/BackButton/BackButton";
 import TaskMenu from "../../components/common/TaskMenu/TaskMenu";
 import type { RootState } from "../../types/types";
 
@@ -18,16 +19,17 @@ const TaskDetails = () => {
   // [TODO] - replace with not found page or redirect to not found page
   if (!task) {
     return (
-      <div className="flex h-full flex-col items-center justify-center px-4">
+      <main className="flex h-full flex-col items-center justify-center px-4">
         <h2 className="text-6xl">404 Task not found...</h2>
-      </div>
+      </main>
     );
   }
 
   const { title, dotColor } = statuses[task.status];
 
   return (
-    <div className="flex h-full flex-col items-center justify-center px-4">
+    <main className="relative flex h-full flex-col items-center justify-center px-4">
+      <BackButton />
       <div className="task-details min-h-1/3 w-full max-w-2xl rounded-xl bg-neutral-800 p-8 text-xl">
         <div className="task-details__header relative flex items-center justify-between">
           <h3 className="task-details__title text-2xl font-bold break-words">
@@ -69,7 +71,7 @@ const TaskDetails = () => {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
