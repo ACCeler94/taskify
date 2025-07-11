@@ -21,3 +21,7 @@ export interface EditTaskPayload {
   desc?: string;
   status?: TaskStatus;
 }
+
+export interface RootState {
+  tasks: Task[];
+}
