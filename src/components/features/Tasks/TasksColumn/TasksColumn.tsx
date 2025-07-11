@@ -1,16 +1,19 @@
-import type { Task, TaskStatus } from '../../../../types/types';
+import { useSelector } from 'react-redux';
+import type { RootState, TaskStatus } from '../../../../types/types';
 import TaskCard from '../TaskCard/TaskCard';
+import { selectTasksByStatus } from '../tasksSelectors';
 
 const TasksColumn = ({
   title,
   dotColor,
-  tasks,
+  status,
 }: {
   title: string;
   dotColor: string;
-  tasks: Task[];
   status: TaskStatus;
 }) => {
+  const tasks = useSelector((state: RootState) => selectTasksByStatus(state, status));
+
   return (
     <section className='task-column bg-neutral-900 mx-4 rounded-xl p-5'>
       <h2 className='column-title flex gap-4 items-center text-lg font-semibold'>
