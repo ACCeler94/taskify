@@ -18,7 +18,7 @@ const TasksColumn = ({
 
   return (
     <section className="task-column mx-4 rounded-xl bg-neutral-900 p-5">
-      <h2 className="column-title flex items-center gap-4 text-lg font-semibold">
+      <h2 className="column-title mb-8 flex items-center gap-4 text-lg font-semibold">
         <svg
           className="status-dot"
           width="18px"
