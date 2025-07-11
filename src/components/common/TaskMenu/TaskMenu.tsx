@@ -30,18 +30,24 @@ const TaskMenu = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleDelete = () => {
+  const handleDelete = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    e.stopPropagation();
+    e.preventDefault();
     dispatch(deleteTask(taskId));
 
     if (onDelete) onDelete();
   };
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <button
         ref={buttonRef}
-        className="flex h-[2em] w-[2em] items-center justify-center rounded-full bg-neutral-700 hover:bg-neutral-500"
-        onClick={() => setMenuOpen((prev) => !prev)}
+        className="flex h-[2em] w-[2em] cursor-pointer items-center justify-center rounded-full bg-neutral-700 hover:bg-neutral-500"
+        onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          setMenuOpen((prev) => !prev);
+        }}
         aria-label="Open and close task menu"
       >
         <svg
