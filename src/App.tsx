@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import NewTask from "./pages/NewTask/NewTask";
 import TaskDetails from "./pages/TaskDetails/TaskDetails";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="tasks">
           <Route path=":id" element={<TaskDetails />} />
+          <Route path="add" element={<NewTask />} />
         </Route>
       </Routes>
     </>
