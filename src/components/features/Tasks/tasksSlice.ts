@@ -23,8 +23,8 @@ const tasksSlice = createSlice({
         Object.assign(task, editData);
       }
     },
-    deleteTask: (state, action: PayloadAction<{ id: string }>) => {
-      const index = state.findIndex((t) => t.id === action.payload.id);
+    deleteTask: (state, action: PayloadAction<string>) => {
+      const index = state.findIndex((t) => t.id === action.payload);
       if (index !== -1) {
         state.splice(index, 1);
       }
