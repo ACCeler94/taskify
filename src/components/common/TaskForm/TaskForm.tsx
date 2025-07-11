@@ -1,5 +1,6 @@
 import { useState } from "react";
-import type { NewTask, TaskStatus } from "../../../types/types";
+import type { TaskStatus } from "../../../types/types";
+import type { CreateTaskInput } from "../../../schemas/task.schema";
 
 interface TaskFormProps {
   isNew?: boolean;
@@ -11,8 +12,9 @@ interface TaskFormProps {
   };
   handleSubmit: (
     e: React.FormEvent<HTMLFormElement>,
-    newTaskData: NewTask,
+    newTaskData: CreateTaskInput,
   ) => void;
+  formError: string | null;
 }
 
 const TaskForm = ({
@@ -20,13 +22,19 @@ const TaskForm = ({
   taskData,
   isNew = false,
   handleSubmit,
+  formError,
 }: TaskFormProps) => {
   const [title, setTitle] = useState(taskData?.title || "");
   const [desc, setDesc] = useState(taskData?.desc || "");
   const [status, setStatus] = useState(taskData?.status || "todo");
+
   return (
     <div className="flex min-h-1/3 w-full max-w-2xl flex-col rounded-xl bg-neutral-800 p-8 text-xl">
       <h2 className="mb-5 text-3xl font-bold">{formTitle}</h2>
+      {/* Generic error message if Zod validation fails */}
+      {formError && (
+        <p className="mb-4 font-semibold text-red-500">{formError}</p>
+      )}
       <form
         className="flex w-full flex-col text-xl"
         onSubmit={(e) => handleSubmit(e, { title, status, desc })}
