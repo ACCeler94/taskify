@@ -1,9 +1,13 @@
+import { Link } from "react-router";
 import type { Task } from "../../../../types/types";
 import TaskMenu from "../../../common/TaskMenu/TaskMenu";
 
 const TaskCard = ({ id, desc, title }: Task) => {
   return (
-    <div className="task-card mb-4 rounded-xl bg-neutral-800 p-5">
+    <Link
+      to={`/tasks/${id}`}
+      className="task-card mb-4 block rounded-xl bg-neutral-800 p-5"
+    >
       <div className="task-card__header relative flex justify-between text-lg">
         <h3 className="task-card__title font-bold break-words">{title}</h3>
         <TaskMenu taskId={id} />
@@ -13,7 +17,7 @@ const TaskCard = ({ id, desc, title }: Task) => {
           {desc}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
