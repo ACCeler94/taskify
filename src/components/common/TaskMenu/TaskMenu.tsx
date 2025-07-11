@@ -28,14 +28,15 @@ const TaskMenuButton = ({ taskId }: { taskId: string }) => {
     <div className="relative">
       <button
         ref={buttonRef}
-        className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-neutral-700 hover:bg-neutral-500"
+        className="flex h-[2em] w-[2em] items-center justify-center rounded-full bg-neutral-700 hover:bg-neutral-500"
         onClick={() => setMenuOpen((prev) => !prev)}
+        aria-label="Open and close task menu"
       >
         <svg
           viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
           fill="#E0E0E0"
-          className="bi bi-three-dots-vertical h-[1rem]"
+          className="bi bi-three-dots-vertical h-[1em]"
           stroke="#E0E0E0"
         >
           <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -55,7 +56,7 @@ const TaskMenuButton = ({ taskId }: { taskId: string }) => {
           ref={menuRef}
           className="task-menu absolute top-10 right-0 w-40 rounded-md bg-neutral-800 shadow-md"
         >
-          <ul className="py-2 text-sm text-white">
+          <ul className="py-2 text-[0.85em] text-white">
             <li className="task-menu__option">
               <Link
                 to={`/${taskId}/edit`}
