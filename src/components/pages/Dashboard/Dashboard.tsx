@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <main className="flex flex-col">
       <h1 className="my-5 text-4xl font-bold">Dashboard</h1>
-      <div className="grid flex-1 grid-cols-3 gap-4">
+      <div className="grid flex-1 grid-cols-3 gap-3">
         {columns.map(({ title, status, dotColor }) => (
           <TasksColumn
             key={status}
