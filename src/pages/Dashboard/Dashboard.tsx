@@ -1,5 +1,5 @@
-import type { Column } from "../../../types/types";
-import TasksColumn from "../../features/tasks/TasksColumn/TasksColumn";
+import TasksColumn from "../../components/features/tasks/TasksColumn/TasksColumn";
+import type { Column } from "../../types/types";
 
 const Dashboard = () => {
   const columns: Column[] = [
