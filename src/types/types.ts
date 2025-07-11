@@ -14,20 +14,6 @@ export interface Column {
   dotColor: string;
 }
 
-export interface NewTask {
-  title: string;
-  desc: string;
-  status: TaskStatus;
-}
-
-// Only id is required to allow partial updates
-export interface EditTaskPayload {
-  id: string;
-  title?: string;
-  desc?: string;
-  status?: TaskStatus;
-}
-
 export interface RootState {
   tasks: Task[];
 }

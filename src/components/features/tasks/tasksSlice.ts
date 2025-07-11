@@ -1,15 +1,20 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { data } from "../../../API/data";
-import type { EditTaskPayload, Task } from "../../../types/types";
 import { v4 as uuid } from "uuid";
+import { data } from "../../../API/data";
+import type {
+  CreateTaskInput,
+  EditTaskInput,
+} from "../../../schemas/task.schema";
+import type { Task } from "../../../types/types";
 
 const initialState: Task[] = data;
+type EditTaskPayload = EditTaskInput & { id: string };
 
 const tasksSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
-    addTask: (state, action: PayloadAction<Omit<Task, "createdAt" | "id">>) => {
+    addTask: (state, action: PayloadAction<CreateTaskInput>) => {
       state.push({
         ...action.payload,
         createdAt: new Date().toISOString(),
