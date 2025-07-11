@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router";
-import { deleteTask } from "../../features/Tasks/tasksSlice";
+import { deleteTask } from "../../features/tasks/tasksSlice";
 
 const TaskMenuButton = ({ taskId }: { taskId: string }) => {
   const [menuOpen, setMenuOpen] = useState(false);
