@@ -3,7 +3,13 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router";
 import { deleteTask } from "../../features/tasks/tasksSlice";
 
-const TaskMenuButton = ({ taskId }: { taskId: string }) => {
+const TaskMenu = ({
+  taskId,
+  onDelete,
+}: {
+  taskId: string;
+  onDelete?: () => void;
+}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -23,6 +29,12 @@ const TaskMenuButton = ({ taskId }: { taskId: string }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleDelete = () => {
+    dispatch(deleteTask(taskId));
+
+    if (onDelete) onDelete();
+  };
 
   return (
     <div className="relative">
@@ -59,7 +71,7 @@ const TaskMenuButton = ({ taskId }: { taskId: string }) => {
           <ul className="py-2 text-[0.85em] text-white">
             <li className="task-menu__option">
               <Link
-                to={`/${taskId}/edit`}
+                to={`/tasks/${taskId}/edit`}
                 className="block w-full px-4 py-2 hover:bg-neutral-700"
               >
                 Edit
@@ -67,7 +79,7 @@ const TaskMenuButton = ({ taskId }: { taskId: string }) => {
             </li>
             <li
               className="task-menu__option cursor-pointer px-4 py-2 text-red-500 hover:bg-neutral-700"
-              onClick={() => dispatch(deleteTask(taskId))}
+              onClick={handleDelete}
             >
               Delete
             </li>
@@ -78,4 +90,4 @@ const TaskMenuButton = ({ taskId }: { taskId: string }) => {
   );
 };
 
-export default TaskMenuButton;
+export default TaskMenu;
