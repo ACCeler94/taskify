@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Typy statusów, np. importowane z types
 export const taskStatusEnum = z.enum(["todo", "inProgress", "done"]);
 
 export const createTaskSchema = z.object({
