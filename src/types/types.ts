@@ -16,4 +16,9 @@ export interface Column {
 
 export interface RootState {
   tasks: Task[];
+  filter: {
+    query: string;
+    sortBy: string;
+    sortingOrder: "asc" | "desc";
+  };
 }
