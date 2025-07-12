@@ -1,5 +1,7 @@
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import type { RootState, TaskStatus } from "../../../../types/types";
+import { sortTasksByDate } from "../../../../utils/sortTasksByDate";
 import TaskCard from "../TaskCard/TaskCard";
 import { selectTasksByStatus } from "../tasksSelectors";
 
@@ -14,6 +16,14 @@ const TasksColumn = ({
 }) => {
   const tasks = useSelector((state: RootState) =>
     selectTasksByStatus(state, status),
+  );
+  const sortingOrder = useSelector(
+    (state: RootState) => state.filter.sortingOrder,
+  );
+
+  const sortedTasks = useMemo(
+    () => sortTasksByDate({ sortingOrder, tasks }),
+    [tasks, sortingOrder],
   );
 
   return (
@@ -41,11 +51,11 @@ const TasksColumn = ({
             ></path>
           </g>
         </svg>
-        {title}
+        {title} ({tasks.length})
       </h2>
 
       <ul className="task-list space-y-2">
-        {tasks.map((task) => (
+        {sortedTasks.map((task) => (
           <li key={task.id}>
             <TaskCard {...task} />
           </li>
