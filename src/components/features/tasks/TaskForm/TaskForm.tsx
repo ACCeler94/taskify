@@ -76,6 +76,7 @@ const TaskForm = ({
         </select>
         <button
           type="submit"
+          name="submit"
           className="cursor-pointer rounded-4xl bg-(--color-btn-blue) px-8 py-2 text-lg font-semibold"
         >
           Submit
