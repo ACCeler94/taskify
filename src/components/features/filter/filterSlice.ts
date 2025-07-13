@@ -6,7 +6,7 @@ interface InitialState {
   sortingOrder: "asc" | "desc";
 }
 
-const initialState: InitialState = {
+export const initialState: InitialState = {
   query: "",
   sortBy: "createdAt",
   sortingOrder: "asc",
