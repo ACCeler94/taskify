@@ -16,10 +16,11 @@ const SearchBar = () => {
     [dispatch],
   );
 
-  // Clean up any ongoing debounces when the component unmounts
+  // Clean up any ongoing debounces when the component unmounts, reset state
   useEffect(() => {
     return () => {
       debouncedDispatch.cancel();
+      dispatch(updateSearchQuery(""));
     };
   }, [debouncedDispatch]);
 
