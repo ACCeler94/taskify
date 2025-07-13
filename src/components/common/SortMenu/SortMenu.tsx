@@ -48,7 +48,7 @@ const SortMenu = () => {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="sorting-menu absolute top-15 right-0 w-25 rounded-md bg-neutral-800 shadow-md"
+          className="sorting-menu absolute top-11 right-0 w-25 rounded-md bg-neutral-800 shadow-md"
         >
           <ul className="py-2 text-[0.85em] text-white">
             <li
