@@ -7,7 +7,7 @@ import type {
 } from "../../../schemas/task.schema";
 import type { Task } from "../../../types/types";
 
-const initialState: Task[] = data;
+export const initialState: Task[] = data;
 type EditTaskPayload = EditTaskInput & { id: string };
 
 const tasksSlice = createSlice({
