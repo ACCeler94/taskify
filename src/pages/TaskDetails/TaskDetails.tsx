@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 import BackButton from "../../components/common/BackButton/BackButton";
 import TaskMenu from "../../components/features/tasks/TaskMenu/TaskMenu";
 import type { RootState } from "../../types/types";
@@ -16,13 +16,8 @@ const TaskDetails = () => {
   };
   const navigate = useNavigate();
 
-  // [TODO] - replace with not found page or redirect to not found page
   if (!task) {
-    return (
-      <main className="flex h-full flex-col items-center justify-center px-4">
-        <h2 className="text-6xl">404 Task not found...</h2>
-      </main>
-    );
+    return <Navigate to="/not-found" replace />;
   }
 
   const { title, dotColor } = statuses[task.status];

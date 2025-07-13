@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 import BackButton from "../../components/common/BackButton/BackButton";
 import TaskForm from "../../components/features/tasks/TaskForm/TaskForm";
 import { editTask } from "../../components/features/tasks/tasksSlice";
@@ -42,13 +42,8 @@ const EditTask = () => {
     navigate("/");
   };
 
-  // [TODO] - replace with not found page or redirect to not found page
   if (!taskData) {
-    return (
-      <main className="flex h-full flex-col items-center justify-center px-4">
-        <h2 className="text-6xl">404 Task not found...</h2>
-      </main>
-    );
+    return <Navigate to="/not-found" replace />;
   }
 
   return (
