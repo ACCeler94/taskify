@@ -1,12 +1,20 @@
 import { useNavigate } from "react-router";
 
-const BackButton = () => {
+const BackButton = ({ to }: { to?: string }) => {
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (to) {
+      navigate(to);
+    } else {
+      navigate(-1);
+    }
+  };
   return (
     <button
       className="back-button absolute top-4 left-4 cursor-pointer"
       aria-label="Go back"
-      onClick={() => navigate(-1)}
+      onClick={handleClick}
     >
       <svg
         width="32px"
