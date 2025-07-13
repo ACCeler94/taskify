@@ -34,7 +34,7 @@ const TasksColumn = ({ title, dotColor, status }: TasksColumnProps) => {
   }, [tasks, sortingOrder, query]);
 
   return (
-    <section className="task-column mx-4 rounded-xl bg-neutral-900 p-5">
+    <section className="task-column col-auto mx-4 rounded-xl bg-neutral-900 p-5">
       <h2 className="column-title mb-8 flex items-center gap-4 text-lg font-semibold">
         <svg
           className="status-dot"

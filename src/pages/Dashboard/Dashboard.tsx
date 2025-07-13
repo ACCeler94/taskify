@@ -1,4 +1,4 @@
-import SortMenu from "../../components/common/SortMenu/SortMenu";
+import SortMenu from "../../components/features/filter/SortMenu/SortMenu";
 import SearchBar from "../../components/features/filter/SearchBar/SearchBar";
 import TasksColumn from "../../components/features/tasks/TasksColumn/TasksColumn";
 import type { Column } from "../../types/types";

@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import BackButton from "../../components/common/BackButton/BackButton";
-import TaskForm from "../../components/common/TaskForm/TaskForm";
+
+import { useNavigate } from "react-router";
+import TaskForm from "../../components/features/tasks/TaskForm/TaskForm";
 import { addTask } from "../../components/features/tasks/tasksSlice";
 import {
   createTaskSchema,
   type CreateTaskInput,
 } from "../../schemas/task.schema";
-import { useNavigate } from "react-router";
 
 const NewTask = () => {
   const [formError, setFormError] = useState<string | null>(null);

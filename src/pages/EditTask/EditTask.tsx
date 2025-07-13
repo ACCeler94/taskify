@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import BackButton from "../../components/common/BackButton/BackButton";
-import TaskForm from "../../components/common/TaskForm/TaskForm";
+import TaskForm from "../../components/features/tasks/TaskForm/TaskForm";
 import { editTask } from "../../components/features/tasks/tasksSlice";
 import { editTaskSchema, type EditTaskInput } from "../../schemas/task.schema";
 import type { RootState } from "../../types/types";

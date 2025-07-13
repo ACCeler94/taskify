@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import BackButton from "../../components/common/BackButton/BackButton";
-import TaskMenu from "../../components/common/TaskMenu/TaskMenu";
+import TaskMenu from "../../components/features/tasks/TaskMenu/TaskMenu";
 import type { RootState } from "../../types/types";
 
 const TaskDetails = () => {

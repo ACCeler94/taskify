@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../../types/types";
-import { changeSortingOrder } from "../../features/filter/filterSlice";
+import type { RootState } from "../../../../types/types";
+import { changeSortingOrder } from "../filterSlice";
 
 const SortMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,17 +51,21 @@ const SortMenu = () => {
           className="sorting-menu absolute top-11 right-0 w-25 rounded-md bg-neutral-800 shadow-md"
         >
           <ul className="py-2 text-[0.85em] text-white">
-            <li
-              className="sorting-menu__option cursor-pointer px-4 py-2 hover:bg-neutral-700"
-              onClick={() => handleSelect("asc")}
-            >
-              ASC
+            <li>
+              <button
+                className="sorting-menu__option w-full cursor-pointer px-4 py-2 text-left hover:bg-neutral-700"
+                onClick={() => handleSelect("asc")}
+              >
+                ASC
+              </button>
             </li>
-            <li
-              className="sorting-menu__option cursor-pointer px-4 py-2 hover:bg-neutral-700"
-              onClick={() => handleSelect("desc")}
-            >
-              DESC
+            <li>
+              <button
+                className="sorting-menu__option w-full cursor-pointer px-4 py-2 text-left hover:bg-neutral-700"
+                onClick={() => handleSelect("desc")}
+              >
+                DESC
+              </button>
             </li>
           </ul>
         </div>

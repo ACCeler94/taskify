@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import type { Task } from "../../../../types/types";
-import TaskMenu from "../../../common/TaskMenu/TaskMenu";
+import TaskMenu from "../TaskMenu/TaskMenu";
 
 const TaskCard = ({ id, desc, title }: Task) => {
   return (

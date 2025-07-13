@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router";
-import { deleteTask } from "../../features/tasks/tasksSlice";
+import { deleteTask } from "../tasksSlice";
 
 const TaskMenu = ({
   taskId,

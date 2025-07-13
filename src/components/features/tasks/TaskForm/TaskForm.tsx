@@ -1,6 +1,6 @@
 import { useState } from "react";
-import type { TaskStatus } from "../../../types/types";
-import type { CreateTaskInput } from "../../../schemas/task.schema";
+import type { TaskStatus } from "../../../../types/types";
+import type { CreateTaskInput } from "../../../../schemas/task.schema";
 
 interface TaskFormProps {
   isNew?: boolean;
