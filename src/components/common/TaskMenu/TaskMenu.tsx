@@ -30,7 +30,7 @@ const TaskMenu = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleDelete = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+  const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     e.preventDefault();
     dispatch(deleteTask(taskId));
@@ -83,11 +83,13 @@ const TaskMenu = ({
                 Edit
               </Link>
             </li>
-            <li
-              className="task-menu__option cursor-pointer px-4 py-2 text-red-500 hover:bg-neutral-700"
-              onClick={handleDelete}
-            >
-              Delete
+            <li>
+              <button
+                className="task-menu__option w-full cursor-pointer px-4 py-2 text-left text-red-500 hover:bg-neutral-700"
+                onClick={handleDelete}
+              >
+                Delete
+              </button>
             </li>
           </ul>
         </div>
