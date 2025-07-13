@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { deleteTask } from "../tasksSlice";
 
 const TaskMenu = ({
@@ -14,6 +14,7 @@ const TaskMenu = ({
   const menuRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -74,18 +75,22 @@ const TaskMenu = ({
           ref={menuRef}
           className="task-menu absolute top-10 right-0 w-40 rounded-md bg-neutral-800 shadow-md"
         >
-          <ul className="py-2 text-[0.85em] text-white">
+          <ul className="z-50 py-2 text-[0.85em] text-white">
             <li className="task-menu__option">
-              <Link
-                to={`/tasks/${taskId}/edit`}
-                className="block w-full px-4 py-2 hover:bg-neutral-700"
+              <button
+                className="w-full cursor-pointer px-4 py-2 text-left hover:bg-neutral-700"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  navigate(`/tasks/${taskId}/edit`);
+                }}
               >
                 Edit
-              </Link>
+              </button>
             </li>
-            <li>
+            <li className="task-menu__option">
               <button
-                className="task-menu__option w-full cursor-pointer px-4 py-2 text-left text-red-500 hover:bg-neutral-700"
+                className="w-full cursor-pointer px-4 py-2 text-left text-red-500 hover:bg-neutral-700"
                 onClick={handleDelete}
               >
                 Delete
