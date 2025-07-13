@@ -30,12 +30,14 @@ const SearchBar = () => {
   return (
     <div className="relative flex items-center">
       <input
-        type="text"
+        type="search"
+        id="taskSearch"
         className="min-w-full rounded-lg bg-neutral-800 p-3 pr-11 text-lg md:min-w-96"
         aria-label="Filter tasks by keywords"
         placeholder="Filter tasks..."
         ref={inputRef}
         onChange={handleChange}
+        autoComplete="off"
       />
       <svg
         width="28px"
