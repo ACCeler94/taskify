@@ -29,7 +29,7 @@ const TaskForm = ({
   const [status, setStatus] = useState(taskData?.status || "todo");
 
   return (
-    <div className="my-15 flex min-h-1/3 w-full max-w-2xl flex-col rounded-xl bg-neutral-800 p-8 text-xl">
+    <div className="my-15 flex min-h-1/3 w-full max-w-2xl flex-col rounded-xl bg-neutral-800 p-5 text-xl sm:p-8">
       <h2 className="mb-5 text-3xl font-bold">{formTitle}</h2>
       {/* Generic error message if Zod validation fails */}
       {formError && (

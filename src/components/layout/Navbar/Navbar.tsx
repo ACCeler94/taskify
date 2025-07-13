@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <header className="h-20 border-b-2 border-(--color-dark-grey) px-[2.5%]">
       <nav className="flex h-20 items-center justify-between">
-        <Link to="/" className="text-5xl font-bold">
+        <Link to="/" className="text-4xl font-bold sm:text-5xl">
           Taskify
         </Link>
         <Link
